@@ -10,17 +10,11 @@ async function authenticate(req, res) {
     var inUser = req.body;
     found = await User.findOne({ username: inUser.username })
 
-    // var isCorrect = await bcrypt.compare(found.password, inUser.password)
-    // var isCorrect = found.password == inUser.password
     if (found) {
         var isCorrect = await bcrypt.compare(inUser.password, found.password)
 
         if (isCorrect) {
             return res.json(found)
-            // (res.status(200).send({
-            //     username: found.username,
-            //     role: authorities,
-            // }))
         }
 
         else {

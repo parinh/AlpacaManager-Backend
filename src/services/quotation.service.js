@@ -57,12 +57,12 @@ async function updateQTnum(req, res){
     res.json(qt_n);
 }
 
+// to change collention name name field
 async function updateCollection() {
     return await FormNumbers.updateMany({},{
         $rename : {qt_num: "num"}
     })
 
-    // return await FormNumbers.find()
 }
 module.exports = {
     createQuotation,
