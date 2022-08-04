@@ -1,4 +1,3 @@
-# AlpacaManager-Backend
 
 # General info.
 Backend of alpaca manager web application.
@@ -11,5 +10,5 @@ To run this project.
 $ cd AlpacaManager-Backend
 $ npm install
 $ npm install --save-dev nodemon
-$ nodemon serrver.js
+$ nodemon server.js
 ```
