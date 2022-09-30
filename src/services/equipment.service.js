@@ -54,6 +54,7 @@ async function storeFile(inFile, filePath){
 }
 
 async function updateValidation(id, name){
+    console.log('validation')
     // * get equipment from name and check if ithe name is itself name or not
     let found = await Equipments.find({name: name})
     console.log(found.length)
@@ -65,7 +66,6 @@ async function updateValidation(id, name){
     else if(found.length == 0){
         return true
     }
-    
     return false
 
     
@@ -73,7 +73,6 @@ async function updateValidation(id, name){
 }
 
 async function updateEquipment(req, res){
-
     let _id = req.query._id
     let data = JSON.parse(req.body.data)
     let is_valid = await updateValidation(_id, data.name)
@@ -97,7 +96,6 @@ async function updateEquipment(req, res){
         }
     }
     else{
-        // console.log(await updateValidation(_id, data.name))
         res.json('duplicate')
         return 
     }
